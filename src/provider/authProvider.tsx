@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     [token],
   )
 
-  return <AuthContext.Provider value={contextValue} children={children} />
+  return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
 }
 
 export const useAuth = () => {
