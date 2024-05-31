@@ -11,9 +11,10 @@ const SuspenseComponent = (Component: React.ComponentType) => (props: object) =>
     </Suspense>
   )
 }
-const Login = SuspenseComponent(React.lazy(() => import("../pages/User/Login")))
-const Home = SuspenseComponent(React.lazy(() => import("../pages/Home")))
-const About = SuspenseComponent(React.lazy(() => import("../pages/About")))
+const Login = SuspenseComponent(React.lazy(() => import("@/pages/User/Login")))
+const Home = SuspenseComponent(React.lazy(() => import("@/pages/Home")))
+const About = SuspenseComponent(React.lazy(() => import("@/pages/About")))
+const Canvas = SuspenseComponent(React.lazy(() => import("@/pages/Canvas")))
 
 const Routes = () => {
   const { token } = useAuth()
@@ -45,6 +46,10 @@ const Routes = () => {
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/canvas",
+          element: <Canvas />,
         },
       ],
     },

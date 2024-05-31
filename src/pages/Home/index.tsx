@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, NavLink } from "react-router-dom"
-import { Button } from "antd"
+import { Button, Row, Col } from "antd"
 import { useAuth } from "@/provider/authProvider"
 import useStore from "@/store"
 import styles from "./style.module.scss"
@@ -66,9 +66,14 @@ const Home: React.FC = () => {
           Reset
         </Button>
       </div>
-      <div>
-        <NavLink to="/about">About</NavLink>
-      </div>
+      <Row>
+        <Col span={4}>
+          <NavLink to="/about">About</NavLink>
+        </Col>
+        <Col span={4}>
+          <NavLink to="/canvas">Canvas</NavLink>
+        </Col>
+      </Row>
     </>
   )
 }
